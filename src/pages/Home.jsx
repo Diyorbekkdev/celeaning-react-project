@@ -1,7 +1,6 @@
 import React from 'react'
 import Quality from '../components/quality-section/Quality'
 import Service from '../components/service/Service'
-import Cleaning from '../components/cleaning/Cleaning'
 import Professional from '../components/professional/Professional'
 import Contact from '../components/contact/Contact'
 import Sidebar from '../components/SideBar/Sidebar'
@@ -14,7 +13,6 @@ function Home() {
         <Sidebar/>
         <Quality/>
         <Service/> 
-        <Cleaning/>
         <Professional/>
         <Covid/>
         <Articles/>
