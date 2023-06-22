@@ -6,6 +6,7 @@ import Contact from '../components/contact/Contact'
 import Sidebar from '../components/SideBar/Sidebar'
 import Articles from '../components/articles/Articles'
 import Covid from '../components/covid/Covid'
+import Cleaning from '../components/cleaning/Cleaning'
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <Sidebar/>
         <Quality/>
         <Service/> 
+        <Cleaning/>
         <Professional/>
         <Covid/>
         <Articles/>
