@@ -1,0 +1,27 @@
+@use "../../sass/mixins.scss" as service;
+@mixin media($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+.clent_wrapper {
+  @extend %df;
+  gap: 15px;
+}
+
+.clent_wrapper p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #6e7191;
+}
+
+.clent_wrapper span {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  color: #211f54;
+}

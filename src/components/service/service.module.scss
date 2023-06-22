@@ -1,0 +1,63 @@
+@use "../../sass/mixins.scss" as service;
+@mixin media($size) {
+    @media only screen and (max-width: $size) {
+      @content;
+    }
+  }
+  
+
+.service{
+    margin-top: 240px;
+}
+
+.service h1{
+    @extend %sec_heading;
+    @include media(725px){
+        font-size: 35px;
+    }
+}
+.service p{
+    padding-top: 21px;
+    @extend %info-text;
+    max-width: 648px;
+    text-align: center;
+    margin: 0 auto;
+}
+.service_wrapper_card{
+    padding-top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 42px;
+    @include media(985px){
+        flex-wrap: wrap;
+    }
+    @include media(847px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.button_wrapper{
+    padding-top: 57px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 240px
+}
+
+.button_wrapper button{
+    margin-left: 15px;
+    @include media(430px){
+        margin-top: 15px;
+    }
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    background: #dfdfdf;
+    margin-bottom: 228px;
+}

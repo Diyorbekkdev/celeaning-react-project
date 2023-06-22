@@ -1,0 +1,124 @@
+@mixin media($size) {
+    @media only screen and (max-width: $size) {
+      @content;
+    }
+  }
+
+#sidebar{
+    display: none;
+    left: 135px;
+    @include media(942px){
+        display: block;
+    }
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dropdown {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #c06162;
+  background: #388de3;
+  position: relative;
+  font-size: 18px;
+  perspective: 1000px;
+  z-index: 100;
+  border-radius: 12px;
+
+  &:hover {
+    background: #2980b9;
+    cursor: pointer;
+
+    .dropdown_menu li {
+      display: block;
+    }
+  }
+}
+
+.dropdown_menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  perspective: 1000px;
+  z-index: -1;
+  border-radius: 12px;
+
+  li {
+    display: none;
+    color: white;
+    background-color: #34495e;
+    padding: 10px 20px;
+    font-size: 16px;
+    opacity: 0;
+    border-radius: 12px;
+    margin-top: 15px;
+
+    &:hover {
+      background-color: #2980b9;
+    }
+  }
+}
+
+// Menu as a whole animated
+.dropdown:hover .dropdown_menu--animated {
+  display: block;
+}
+
+.dropdown_menu--animated {
+  display: none;
+
+  li {
+    display: block;
+    opacity: 1;
+  }
+}
+
+
+
+
+
+// Menu Items Animated individually
+
+
+
+.dropdown_menu-4 {
+  @for $num from 1 through 5 {
+    .dropdown_item-#{$num} {
+      transform-origin: top center;
+      animation: scaleZ 300ms (#{$num * 60ms}) ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.07);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+.dropdown_menu-4{
+    li{
+        a{
+            color: #FFF;
+        }
+    }
+}

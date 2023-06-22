@@ -1,0 +1,104 @@
+@use "../../sass/mixins.scss" as mixin;
+@mixin media($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+
+.header{
+    padding: 20px;
+}
+
+.nav {
+  @extend %df;
+}
+
+.nav__left {
+  @extend %df;
+  gap: 15px;
+}
+.contact {
+  @extend %nav-link;
+  @include media(950px) {
+    display: none;
+  }
+}
+.contact::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.contact:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.cart {
+  position: relative;
+  @extend %nav-link;
+  margin-right: 20px;
+}
+
+.nav_list {
+  @extend %df;
+  gap: 15px;
+  @include media(950px) {
+    display: none;
+  }
+  li {
+    a {
+      @extend %nav-link;
+      display: inline-block;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0087ca;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
+}
+
+.cart_gif {
+  img {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: -10px;
+    right: 75px;
+  }
+}
+
+.custom_button {
+  display: none;
+}
+.nav__right{
+  @include media(402px){
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav__right button {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@mixin media($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+*,
+*::after,
+*::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+html{
+  scroll-behavior: smooth;
+ 
+}
+
+body{
+  font-size: 16px;
+  font-family: 'Roboto';
+  @include media(768px){
+    font-size: 14px;
+  }
+  @include media(378px){
+    font-size: 12px;
+  }
+}
+
+.container{
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+

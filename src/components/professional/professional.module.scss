@@ -1,0 +1,44 @@
+@use "../../sass/mixins.scss" as mixin;
+@mixin media($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+.professional{
+    margin-top: 152px;
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media(725px){
+        gap: 35px;
+        flex-direction: column
+    }
+}
+
+.heading h1{
+    @extend %sec_heading; 
+    max-width: 475px;
+    @include media(725px){
+        font-size: 35px;
+    }
+}
+.card_wrapper{
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media(947px){
+        flex-wrap: wrap;
+    }
+    @include media(837px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+}

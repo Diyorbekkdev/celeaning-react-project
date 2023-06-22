@@ -1,0 +1,26 @@
+@use "../../sass/mixins.scss" as cont;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 374px;
+}
+.card h3 {
+  margin-top: 39px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  text-align: center;
+  color: #211f54;
+}
+
+.card p{
+    margin-top: 16px;
+    @extend %info-text;
+}
+
+.card img{
+    width: percent(258px, 374px);
+}
+

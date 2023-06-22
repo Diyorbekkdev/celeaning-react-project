@@ -1,0 +1,27 @@
+@use '../../sass/mixins.scss' as mx;
+@mixin media($size) {
+    @media only screen and (max-width: $size) {
+      @content;
+    }
+  }
+  
+.title {
+  @extend %df;
+  padding: 60px 0px 20px;
+  @extend %sec_heading;
+  @include media(768px){
+    font-size: 40px
+  }
+  @include media(550px){
+    font-size: 25px;
+    flex-direction: column;
+  }
+}
+
+.cards {
+  @extend %df;
+
+  @media(max-width:725px) {
+    flex-direction: column;
+  }
+}

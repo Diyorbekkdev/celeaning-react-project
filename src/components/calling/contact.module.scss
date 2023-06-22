@@ -1,0 +1,33 @@
+@use "../../sass/mixins.scss" as cont;
+
+.calling {
+  max-width: 311px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.calling_icon {
+  width: 71px;
+  width: 71px;
+}
+.wrapper_calling {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.wrapper_calling p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #6e7191;
+}
+
+.wrapper_calling span {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  color: #211f54;
+}
